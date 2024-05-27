@@ -1,11 +1,24 @@
 package com.asterisc.in.pack.model;
 
-public class Employee 
-{
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name="emp_tbl")
+public class Employee {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int eid;
 	private String ename;
-	private double esal;
+	@Column(name = "salary")
+	private double esalary;
+	
+	
 	public int getEid() {
 		return eid;
 	}
@@ -18,27 +31,29 @@ public class Employee
 	public void setEname(String ename) {
 		this.ename = ename;
 	}
-	public double getEsal() {
-		return esal;
+	public double getEsalary() {
+		return esalary;
 	}
-	public void setEsal(double esal) {
-		this.esal = esal;
+	public void setEsalary(double esalary) {
+		this.esalary = esalary;
 	}
 	@Override
 	public String toString() {
-		return "Employee [eid=" + eid + ", ename=" + ename + ", esal=" + esal + "]";
+		return "Employee [eid=" + eid + ", ename=" + ename + ", esalary=" + esalary + "]";
 	}
-	public Employee(int eid, String ename, double esal) {
+	public Employee(int eid, String ename, double esalary) {
 		super();
 		this.eid = eid;
 		this.ename = ename;
-		this.esal = esal;
+		this.esalary = esalary;
 	}
-	public Employee(String ename, double esal) {
+	
+	public Employee( String ename, double esalary) {
 		super();
 		this.ename = ename;
-		this.esal = esal;
+		this.esalary = esalary;
 	}
+	
 	public Employee() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -46,5 +61,5 @@ public class Employee
 	
 	
 	
-	
+
 }

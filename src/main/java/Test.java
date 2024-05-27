@@ -30,8 +30,8 @@ public class Test {
 		   
 		   Employee e=new Employee(name, salary);
 		
+		  // db.inserted(e);
 		   db.inserted(e);
-		   
 		   System.out.println("Data Inserted");
 		   
 		   
